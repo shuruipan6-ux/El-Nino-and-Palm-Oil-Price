@@ -1,97 +1,84 @@
-# Palm Oil Weather Premium Forecast
+# Can El Niño Predict Palm Oil Prices?
 
-Forecasting whether weather-driven palm oil price moves are more likely to continue or reverse when market expectations diverge from physical supply data.
+El Niño is a recurring climate phenomenon that changes temperature and rainfall patterns across different parts of the world. Its effects can extend beyond the climate itself, influencing agricultural production, food prices, energy demand and commodity markets.
 
-> **Status:** Research design and data feasibility audit. No model results are claimed yet.
+Agriculture is one of the most important transmission channels. Changes in rainfall and temperature can affect crop growth, harvests and eventually market supply. However, these effects do not always appear immediately, and the same El Niño event may have different consequences across crops and producing regions.
 
-## Business question
+This research focuses on palm oil.
 
-Markets may price an expected El Niño supply shock before it appears in production and inventory data. When palm oil prices rise while physical supply remains loose, investors face a practical question:
+Palm oil is a useful case because most global production is concentrated in Malaysia and Indonesia, where rainfall conditions matter for yields. At the same time, Malaysia publishes monthly data on palm oil production, inventories and exports, making it possible to compare climate signals with changes in the physical market.
 
-**Will later fundamentals validate the weather premium, or will the premium unwind?**
+## Why this question matters now
 
-This project turns that question into a historical forecasting exercise using information that would actually have been available at each forecast date.
+El Niño conditions became established in spring 2026 and strengthened over the following months. By August, the Japan Meteorological Agency expected the event to continue through the Northern Hemisphere winter.
 
-## Project objective
+A stronger El Niño may increase concerns about dry weather and future palm oil supply. However, the latest Malaysian data did not yet show a supply contraction. In July 2026, crude palm oil production increased by 9.41% from the previous month, while total palm oil inventories increased by 3.32%.
 
-Build and evaluate a transparent weather–fundamental divergence indicator for Malaysian palm oil, then test whether it improves one- to three-month price forecasts beyond a price-only baseline.
+This creates the main question of the project:
 
-The project will forecast:
+> Can El Niño help predict palm oil prices, and does its predictive value depend on whether production and inventory data confirm the expected supply impact?
 
-- next-month palm oil price direction or return;
-- continuation versus material reversal over the next one to three months;
-- whether predictive information comes from weather expectations, physical confirmation, or their divergence.
+## Research objective
 
-## Research design
+The project will test whether climate information can improve forecasts of future palm oil price movements.
 
-The analysis has three information layers:
+It will not assume that every El Niño event leads to higher palm oil prices. Instead, it will examine whether the relationship changes depending on the condition of the physical market.
 
-1. **Weather expectations:** ONI level, change, event strength, duration, and lag structure.
-2. **Physical fundamentals:** seasonally adjusted MPOB production, inventory, and exports.
-3. **Market pricing:** palm oil returns, trend deviation, and volatility.
+In particular, I will compare two situations:
 
-A preliminary divergence signal will compare weather and price pressure with the degree of physical tightening. Its final formula will be selected using only training data and will remain interpretable.
+1. El Niño strengthens, but palm oil production and inventories remain stable.
+2. El Niño strengthens, while production falls or inventories begin to tighten.
 
-## Validation standard
+The first situation may represent a weather concern that has not yet affected supply. The second may indicate that the climate signal is beginning to appear in the physical market.
 
-The main evidence will come from expanding-window or rolling-window historical forecasts. Every forecast must use only data published by that date.
+The research will test whether these two situations lead to different palm oil price movements over the following one, three and six months.
 
-The weather–fundamental model will be compared with:
+## Research approach
 
-- a naive or historical-mean benchmark;
-- a price-only time-series model;
-- a price plus weather model;
-- a price, weather, fundamentals, and divergence model.
+The analysis will combine three groups of variables:
 
-Evaluation will include forecast error, directional accuracy, performance by climate regime, and sensitivity to publication lags. A complex model will only be retained if it improves out-of-sample results consistently.
+- **Climate indicators:** El Niño strength, rainfall and other relevant weather conditions.
+- **Palm oil supply indicators:** production, inventories and exports.
+- **Market indicators:** crude palm oil futures prices and subsequent returns.
 
-## Current data plan
+Historical El Niño periods will be used to examine how these variables interacted in the past.
 
-| Data module | Candidate source | Initial variables | Current task |
-|---|---|---|---|
-| Climate | NOAA Physical Sciences Laboratory | ONI and related ENSO indices | Confirm downloadable history and publication timing |
-| Physical supply | Malaysian Palm Oil Board (MPOB) | Production, stocks, exports | Build a continuous monthly table and verify release dates |
-| Market price | World Bank Commodity Price Data | Monthly palm oil price | Confirm definition, currency, and timing |
+The model will only use information that would have been available at each point in time. This avoids using later production or inventory data to explain an earlier price movement.
 
-See [`data/README.md`](data/README.md) and [`docs/data_dictionary.md`](docs/data_dictionary.md) for the audit fields.
+## Expected contribution
 
-## Repository structure
+The project aims to determine whether El Niño is useful as an independent forecasting signal or only becomes informative when supported by changes in production and inventories.
 
-```text
-.
-├── config/              # Data-source registry and project settings
-├── data/                # Documentation plus untracked raw/processed data
-├── docs/                # Research design and data dictionary
-├── notebooks/           # Ordered analysis notebooks
-├── reports/figures/     # Final charts for the README and report
-├── src/                 # Reusable data-audit and modeling code
-├── tests/               # Lightweight automated checks
-├── .gitignore
-├── requirements.txt
-└── README.md
-```
+Several conclusions are possible:
 
-## Reproduce the current scaffold
+- El Niño has predictive value before supply data deteriorate.
+- El Niño becomes useful only after the physical market begins to tighten.
+- Prices react to El Niño concerns but reverse when the expected supply impact does not appear.
+- El Niño provides little stable forecasting value once seasonality and supply conditions are considered.
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-pytest
-jupyter lab
-```
+Any of these outcomes would help explain how climate information should—and should not—be used when analysing agricultural commodity prices.
 
-Start with [`notebooks/00_data_feasibility.ipynb`](notebooks/00_data_feasibility.ipynb). It records what is required, what is currently available, and what must be verified before modeling begins.
+## Current stage
 
-## Research boundaries
+The project is currently at the research-design and data-feasibility stage.
 
-- The project focuses on Malaysian palm oil, not a broad basket of agricultural assets.
-- It does not directly forecast individual company share prices.
-- It does not assume that El Niño always raises palm oil prices.
-- Reported percentage moves or lag claims from secondary research are hypotheses until traced to primary sources and independently tested.
-- Correlation will not be presented as certain causality.
+The next steps are to verify the historical datasets, select a reliable palm oil futures price series, define the climate and supply indicators, and test the method on previous El Niño episodes.
 
-## Origin and ownership
+No forecasting results have been produced yet.
 
-The research question was inspired by an internship discussion about divergence between market expectations and physical commodity data. The data engineering, indicator construction, forecasting design, code, and validation in this repository are intended to be independently completed and clearly documented.
+## Project background
 
+The initial idea was inspired by an internship research note on the economic and market effects of El Niño.
+
+This project develops an independent research question using public datasets, independently defined indicators, original code and historical validation.
+
+## Initial data sources
+
+- [Japan Meteorological Agency — El Niño Outlook](https://www.data.jma.go.jp/tcc/tcc/products/elnino/outlook.html)
+- [NOAA Climate Prediction Center — ENSO Diagnostic Discussion](https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml)
+- [Malaysian Palm Oil Board — Monthly Industry Performance](https://bepi.mpob.gov.my/ticker/infoticker.php)
+- [Copernicus Climate Change Service](https://climate.copernicus.eu/)
+
+## Disclaimer
+
+This is an academic and portfolio research project. It does not provide investment advice or assume that El Niño has a fixed causal effect on palm oil prices.
