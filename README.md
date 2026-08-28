@@ -1,12 +1,15 @@
-# Can El Niño Predict Palm Oil Prices?
+# Climate Signals and Commodity Price
 
-El Niño is a recurring climate phenomenon that changes temperature and rainfall patterns across different parts of the world. Its effects can extend beyond the climate itself, influencing agricultural production, food prices, energy demand and commodity markets.
+As a significant climate event, El Niño can affect rainfall, temperature and growing conditions across major producing regions. These changes may influence agricultural output, energy demand, transportation and global supply chains.
 
-Agriculture is one of the most important transmission channels. Changes in rainfall and temperature can affect crop growth, harvests and eventually market supply. However, these effects do not always appear immediately, and the same El Niño event may have different consequences across crops and producing regions.
+However, climate is only one of many factors affecting commodity prices. Production, inventories, demand, trade policy, exchange rates and market expectations may all influence how prices move.
 
-This research focuses on palm oil.
+This project aims to investigate how climate signals interact with supply fundamentals in commodity markets.
 
-Palm oil is a useful case because most global production is concentrated in Malaysia and Indonesia, where rainfall conditions matter for yields. At the same time, Malaysia publishes monthly data on palm oil production, inventories and exports, making it possible to compare climate signals with changes in the physical market.
+The main objective is not to claim that weather determines prices. Instead, the research will examine whether climate information has a measurable relationship with commodity price movements after historical prices and observable supply conditions are taken into account.
+
+A particular focus will be placed on periods when climate expectations and physical-market data appear to disagree. For example, markets may begin pricing an expected supply disruption before production or inventory data show any deterioration. The project will test whether later supply confirmation helps explain why some price movements continue while others reverse.
+
 
 ## Why this question matters now
 
@@ -65,12 +68,6 @@ The project is currently at the research-design and data-feasibility stage.
 The next steps are to verify the historical datasets, select a reliable palm oil futures price series, define the climate and supply indicators, and test the method on previous El Niño episodes.
 
 No forecasting results have been produced yet.
-
-## Project background
-
-The initial idea was inspired by an internship research note on the economic and market effects of El Niño.
-
-This project develops an independent research question using public datasets, independently defined indicators, original code and historical validation.
 
 ## Initial data sources
 
