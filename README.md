@@ -2,8 +2,6 @@
 
 As a significant climate event, El Niño can affect rainfall, temperature and growing conditions across major producing regions. These changes may influence agricultural output, energy demand, transportation and global supply chains.
 
-However, climate is only one of many factors affecting commodity prices. Production, inventories, demand, trade policy, exchange rates and market expectations may all influence how prices move.
-
 This project aims to investigate how climate signals interact with supply fundamentals in commodity markets.
 
 The main objective is not to claim that weather determines prices. Instead, the research will examine whether climate information has a measurable relationship with commodity price movements after historical prices and observable supply conditions are taken into account.
