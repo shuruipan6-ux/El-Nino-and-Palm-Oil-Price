@@ -1,0 +1,9 @@
+﻿dataset,provider,url
+MPOB monthly supply,Malaysian Palm Oil Board,https://bepi.mpob.gov.my/stat/web_internal.php?val=YYYY84
+MPOB local CPO price,Malaysian Palm Oil Board,https://bepi.mpob.gov.my/admin2/price_local_daily_view_cpo_msia.php?jenis=1Y&more=Y&tahun=YYYY
+MPOB FFB yield,Malaysian Palm Oil Board,https://bepi.mpob.gov.my/index.php/import/735-archive-yield-list
+Commodity prices,World Bank,https://www.worldbank.org/en/research/commodity-markets
+USD/MYR,Federal Reserve Bank of St. Louis,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXMAUS
+RONI,NOAA Climate Prediction Center,https://www.cpc.ncep.noaa.gov/data/indices/RONI.ascii.txt
+CHIRPS rainfall,UCSB CHG via Google Earth Engine,https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY
+ERA5-Land soil moisture,ECMWF via Google Earth Engine,https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY_AGGR
